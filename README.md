@@ -12,3 +12,10 @@ function Example() {
 ```
 root.render(<Example/>);
 ```
+
+
+## コンポーネント
+
+export defaultではインポートするときに，任意の名前をつけて良い。
+名前付きエクスポートは，{ Name }で名前つけする必要がある。
+

@@ -28,3 +28,33 @@ HTML形式のJSXをBABELでJavascript化する。Javascript（関数）によっ
 親コンポーネントの変数に`children`を定義してあげる！
 ↓
 タグと閉じタグで囲んで子コンポーネントを挟んで表示することが可能。
+
+## Props
+
+POINT propsの流れは一方通行
+POINT propsは読み取り専用
+
+↓
+じゃあ，子コンポーネントで保存した値を親コンポーネントで表示したいときはどうしたらいい？どうしてます？
+↓
+Tobe continue..!
+
+## Reactの色々のはイベントハンドラー
+
+onClick={fn}
+→当該要素をクリックした際にfn（関数）で実行する
+
+onChange(onInput)
+→Inputから入力した文字をリアルタイムで表示する
+
+onBlur
+→Input入力から外れた時に発火
+
+onFocus
+→Inputに入力が開始された時に発火
+
+onMouseEnter
+→マウスがホバーした時に発火
+
+onMouseLeave
+→マウスホバーが外れた時に発火

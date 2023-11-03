@@ -99,3 +99,22 @@ Reactでは基本的に関数型プログラミング使っていこう。
 * 関数外に影響を及ぼさない。
 * 引数で渡された値を変更しない。
 （ * 決まった値→決まった値を返すこと。厳密には親コンポーネントでは実現できないのでアレ。）
+
+## 重要なReactの関数
+
+* react
+useState, useReducer
+useRef, forwardRef, useImperativeHandle
+
+* react-dom
+createPortal
+
+## useReducerって何？
+
+useStateの上位互換。
+
+## useContentってなんなん？
+
+
+## useEffectって美味しいの？
+

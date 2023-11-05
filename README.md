@@ -113,8 +113,49 @@ createPortal
 
 useStateの上位互換。
 
-## useContentってなんなん？
+### useReducer
 
+* 第一引数:reducer関数
+* 第二引数:stateの初期値
+
+### reducer関数
+
+* 第一引数:state（前の）
+* 第二引数:dispatchから受け取った引数
+
+## useContextってなんなん？
+
+親から子へ，子から孫へというデータ（プロップス）を渡す際に，処理を簡略化できる。
+
+createContext
 
 ## useEffectって美味しいの？
+
+
+## useMemo
+
+Reactにおけるパフォーマンス改善に用いる
+
+
+## useCallback
+
+Reactにおけるパフォーマンス改善に用いる
+
+## Custom Hooksって自分で関数作れる感じか
+
+(システムによって独自関数はでてきそうだね．)
+
+
+## Reduxをざっくり
+
+vueにもおなじような機能あってけど，ざっくりフロントエンドのDB？マスタ？的なイメージ．
+
+## パフォーマンス最適化
+
+→実務に活かせるものがあるかもね．
+
+## Rest APIもみたい
+
+## Next.jsでアプリ作ろう！
+
 

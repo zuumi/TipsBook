@@ -66,10 +66,28 @@ onMouseLeave
 
 ## createPortalって？
 
-`import { createPortal } from "react-dom"`で使用可能。
+* 子要素（A）の子要素を、親要素のDOMに子要素（B）として生成できる関数。
+* createPortal（ 生成したコンポーネント, 生成する箇所のDOM )
 
-子要素（A）の子要素を、親要素のDOMに子要素（B）として生成できる関数。
-createPortal（ 当該コンポーネントの子要素, 作成する箇所のDOM )
+オレオレスニペット
+
+```js
+import createPortal from "react-dom";
+
+// ..省略..
+
+const [TF, setTF] = useState(false);
+
+<button onClick={()=>setTF(true)} disable={TF}></button>
+
+{TF && (createPortal(
+  <Modal></Modal>,
+  document.querySelector(".container")
+))}
+
+```
+
+これで親でも子でも孫でもどこでも，classNameが存在する場所にコンポーネントを生成できる！
 
 ## forwardRefとは？
 

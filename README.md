@@ -122,10 +122,60 @@ forwardRefとは，コンポーネントをラップ化し，引数に指定し�
 ただ、子コンポーネントで値（今回の場合はDOM要素）を格納できてしまう。ので，
 親子の依存関係が強くなり、データの流れが子→親への流れを作ってしまうのであまり良くはない。
 
+スニペット
+
+```js
+import { useRef, forwardRef } from "react";
+
+const Children = forwardRef(({props, ref}) => {
+  return <input ref={ref} type="text"/>
+});
+
+export default Example = () => {
+  const ref = useRef();
+
+  return (
+    <>
+      <Children ref={ref}/>
+    </>
+  );
+}
+
+```
 
 ## useImperativeHandleでは
 
 親側で自由に操作できすぎてしまうのでハンドルできるように、Refを置き換えて使用用途を子要素側で絞ることができる。
+
+スニペット
+
+```js
+import { useRef, forwardRef, useImperativeHandle} from "react";
+
+const Children = forwardRef(({props, ref}) => {
+  const inputRef = useRef();
+
+  useImperativeHandle(ref,
+    ()=>({
+      inputFocus: ()=>{ ref.current.focus()}
+    })
+  );
+
+  return <input ref={inputRef} type="text"/>
+});
+
+export default Example = () => {
+  const ref = useRef();
+
+  return (
+    <>
+      <Children ref={ref}/>
+      <button onClick={()=>{ref.current.inputFocus()}}/>
+    </>
+  );
+}
+
+```
 
 ## 関数型プログラミングについて
 

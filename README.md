@@ -89,6 +89,32 @@ const [TF, setTF] = useState(false);
 
 これで親でも子でも孫でもどこでも，classNameが存在する場所にコンポーネントを生成できる！
 
+## useRefについて
+
+（ Refってそもそも何って思いますよね．かくいう私もその一人でした．そう．これを知るまでは．)
+
+Refってcurrentプロパティに値を格納できる箱ですよね！→はい．
+
+でもHTMLのref属性にオブジェクトを指定すると....なんと指定「された」タグをDOMオブジェクトとして，Refのcurrentプロパティに格納（吸収!!!!!）するのです!
+
+おそろしい...だからオブジェクト好き勝手できるようになってしまうのですな．すげぇぇ．
+
+```js
+import {useRef} from "react";
+
+// 省略
+
+const ref = useRef('初期値');
+
+// 省略
+
+<video ref={ref}></video>
+
+<button onClick={()=>{ ref.current.pause() }}>一時停止</button>
+```
+
+参考：[HTML DOM Video Object](https://www.w3schools.com/jsref/dom_obj_video.asp)6
+
 ## forwardRefとは？
 
 forwardRefとは，コンポーネントをラップ化し，引数に指定した子コンポーネントが，親からrefを受け取れるようになる関数。

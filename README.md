@@ -216,6 +216,21 @@ useStateの上位互換。
 
 * 第一引数:state（前の）
 * 第二引数:dispatchから受け取った引数
+useReducerの使い方（スニペット）
+
+```
+const [rState, dispatch] = useReducer(reducer, '初期値')
+
+reducer = (state, {action, step}) => {
+ 
+}
+
+...
+
+dispatch({action:'plus',step:2})
+
+...
+```
 
 ## useContextってなんなん？
 
@@ -223,6 +238,14 @@ useStateの上位互換。
 
 createContext
 
+スニペット
+
+```
+import {createContext} from "react";
+
+const MyContext = createContext(0);
+```
+s
 ## useEffectって美味しいの？
 
 

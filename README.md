@@ -244,6 +244,13 @@ createContext
 import {createContext} from "react";
 
 const MyContext = createContext(0);
+
+...
+return (
+  <MyContext.Provider value={[state, setState]}>
+  <MyContext.Provider>
+)
+#と定義する事で子コンポーネントで，useContext(MyContext)で変数を使用することができる．
 ```
 s
 ## useEffectって美味しいの？
